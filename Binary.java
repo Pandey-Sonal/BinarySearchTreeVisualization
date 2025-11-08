@@ -23,7 +23,7 @@ import javax.swing.plaf.FontUIResource;
  * @author acer
  */
 public class Binary extends javax.swing.JFrame {
-    TreeNode head;
+    TreeNode head; // custom class
     Border blackline;
     Border redline;
     String str;
@@ -339,7 +339,7 @@ public class Binary extends javax.swing.JFrame {
             if(t.data > value) //if entered value is less than the current node value
                 t = t.left;//use left child as the current node                                 
             else if(t.data < value)//if entered value is greater than the current node value  
-                t = t.right;//use right child as the curent node
+                t = t.right;//use right child as the current node
             else {
                 if(t.left != null && t.right!=null) //if the node have no children
                     replaceNode(t,t.left);//passing parameters to method 
@@ -367,7 +367,7 @@ return false;
             else
                 t.parent.right = null;//else delete the other child
         }
-        else if(t.left == null) {//check if there is the right child of the parent node
+        else if(t.left == null) {//check if there is a right child of the parent node
             if(t == head) {
                 head = t.right;//then the right child becomes the parent node
                 t.parent = null;//delete that node
@@ -404,7 +404,7 @@ return false;
             if(t.data > value) //entered value is less than the current Node value
             t = t.left;//left child node becomes the current node
             
-            else if(t.data < value) //if enetered value is greater than the current Node value
+            else if(t.data < value) //if entered value is greater than the current Node value
 t = t.right;//right child node becomes the current node
 
             
@@ -527,7 +527,7 @@ drawNodes(t.right,i);
 drawline(head);        
 }
 
-            //method to draw line in between the nodes
+            //method to draw a line in between the nodes
      void drawline(TreeNode t) {
         if(t.right != null) {
             jpan = new JPanel() {//inserting jpanel
@@ -545,7 +545,7 @@ drawline(head);
         }
         if(t.left != null) {
 
-            jpan = new JPanel() {//insertinhg jpanel 
+            jpan = new JPanel() {//inserting jpanel 
                 @Override
                 public void paintComponent(Graphics g) {
                     super.paintComponent(g);
@@ -590,7 +590,7 @@ drawline(head);
                  jInternalFrame2.add(jLabels); //adding jlabel to jInternalFrame
                 }
                 catch(NumberFormatException e){
-                     JLabel jLabels = new JLabel(str+" is not an integer");
+                JLabel jLabels = new JLabel(str+" is not an integer");
                 jLabels.setFont(new Font("Arial Narrow",Font.BOLD,20));//setting font, font size in jlabel
                 jLabels.setBounds(40, 20, 400, 20);
                  jInternalFrame2.add(jLabels); //adding jlabel to jInternalFrame
